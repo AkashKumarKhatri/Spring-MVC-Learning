@@ -15,9 +15,13 @@ public class LoveCalculatorApplicationInitializer { // implements WebApplication
 
 	public void onStartup(ServletContext servletContext) throws ServletException {
 
+	// Ye class hum us time use krty hn jis time hum apne beans xml file k ander bna rahy hoty hn to hum yehan xml file load krty h  
+		
 		//XmlWebApplicationContext xmlWebApplicationContext = new XmlWebApplicationContext();
 		//xmlWebApplicationContext.setConfigLocation("classpath:application-config.xml");
 
+	// Ye class hum us time use krty hn jis time hum apne beans Java class k ander bna rahy hoty hn to hum yehan class load krty h
+		
 		AnnotationConfigWebApplicationContext webApplicationContext = new AnnotationConfigWebApplicationContext();
 		webApplicationContext.register(LoveCalculatorAppConfig.class);
 		
@@ -30,10 +34,10 @@ public class LoveCalculatorApplicationInitializer { // implements WebApplication
 				dispatcherServlet);
 
 		myCustomDispatcherServlet.setLoadOnStartup(1);
-		myCustomDispatcherServlet.addMapping("/mywebsite.com/*");
-
-		// System.out.println("my custom class onstartup method called >>> Aakash
-		// Khatri");
+		//myCustomDispatcherServlet.addMapping("/mywebsite.com/*");
+		myCustomDispatcherServlet.addMapping("/");
+		
+		System.out.println("my custom class onstartup method called >>> Aakash Khatri");
 
 	}
 

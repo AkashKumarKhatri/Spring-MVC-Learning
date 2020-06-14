@@ -14,7 +14,7 @@ public class LoveCalculatorAppConfig {
 	//set up my view resolver
 	
 	@Bean
-	InternalResourceViewResolver viewResolver() {
+	public InternalResourceViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		viewResolver.setPrefix("/WEB-INF/view/");
 		viewResolver.setSuffix(".jsp");
