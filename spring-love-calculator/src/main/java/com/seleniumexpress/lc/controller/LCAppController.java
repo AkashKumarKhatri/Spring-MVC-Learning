@@ -1,7 +1,13 @@
 package com.seleniumexpress.lc.controller;
 
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +23,19 @@ public class LCAppController {
 	}
 
 	@RequestMapping("/process-homepage")
-	public String showResultPage(@ModelAttribute("userInfo") UserInfoDTO userInfoDTO) {
+	public String showResultPage(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult result) {
+		
+		System.out.println(userInfoDTO.isTermAndCondition());
+		
+		if (result.hasErrors()) {
+			// System.out.println("My form has errors...");
+			
+			List<ObjectError> allErrors = result.getAllErrors();
+			
+			allErrors.forEach(e -> System.out.println(e));
+			
+			return "home-page";
+		}
 		return "result-page";
 	}
 
