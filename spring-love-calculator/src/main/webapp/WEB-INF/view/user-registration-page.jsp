@@ -57,8 +57,30 @@
 			<br />
 			<br />
 			
+			<label>Age</label>
+			<form:input path="age" />
+			
+			<br />
+			<br />
+		</div>
+		
+		<div align="center">
+			<h3>Communication</h3>
+			<label>Email</label>
+			<form:input path="communicationDTO.email" />
+			
+			<label>Phone</label>
+			<form:input path="communicationDTO.phone" />
+				
+		</div>
+		
+		<br />
+		<br />
+		
+		<div align="center">
 			<input type="submit" value="Register" />
 		</div>
+		
 	</form:form>
 </body>
 </html>

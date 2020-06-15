@@ -9,12 +9,12 @@
 <title>Home Page</title>
 
 <style type="text/css">
-	.error {
-		color: red;
-		position: fixed;
-		text-align: left;
-		margin-left: 30px;
-	}
+.error {
+	color: red;
+	position: fixed;
+	text-align: left;
+	margin-left: 30px;
+}
 </style>
 
 <script type="text/javascript">
@@ -37,7 +37,8 @@
 	<hr />
 
 	<!-- A spring mvc html form  -->
-	<form:form action="process-homepage" method="get" modelAttribute="userInfo" onsubmit="return validateUserName()">
+	<form:form action="process-homepage" method="get"
+		modelAttribute="userInfo" onsubmit="return validateUserName()">
 		<div align="center">
 			<p>
 				<label for="yn">Your Name : </label>
